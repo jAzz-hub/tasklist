@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %} Agenda {% endblock %}
+{% block content %}
+<div class="offset-1 col-10 list-div">
+    <h1>Lista de Tarefas</h1>
+    <a id="add-link" href="newtask/"></a>
+        <div class="col-2 add-div">
+            <i class="fas fa-plus"></i>Adicionar tarefas
+    </div>
+    <div class="col-9 search-div">
+        <input class="form-control" type="text" name="tarefa" id="tarefa" placeholder="Digite uma tarefa">
+        <i class="fas fa-search"></i>
+    </div>
+    <ul class="task-list">
+        {% for tarefa in all_tasks %}
+        <li class="task-item">
+            <span><a href="/tarefas/{{tarefas.id}}">{{tarefas.title}}</a></span>
+            <span class="fas fa-trash"></span>
+            <span class="fas fa-edit"></span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}
